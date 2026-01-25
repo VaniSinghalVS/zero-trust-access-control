@@ -43,21 +43,24 @@ This project implements a **prototype Zero Trust Access Control System** that ev
 
 ## 🧩 Project Structure
 
+## 🧩 Project Structure
+
+```text
 zero-trust-access-control/
-│
 ├── backend/
-│ └── src/
-│ ├── ZeroTrustServer.java
-│ └── ZeroTrustServer.class
+│   └── src/
+│       ├── ZeroTrustServer.java
+│       └── ZeroTrustServer.class
 │
 ├── frontend-react/
-│ ├── public/
-│ └── src/
-│ ├── App.js
-│ ├── App.css
-│ └── index.js
+│   ├── public/
+│   └── src/
+│       ├── App.js
+│       ├── App.css
+│       └── index.js
 │
 └── README.md
+
 
 
 
