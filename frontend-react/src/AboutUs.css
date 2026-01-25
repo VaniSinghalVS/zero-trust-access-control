@@ -1,0 +1,18 @@
+.about-us-container {
+  padding: 2.5rem;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+.about-us-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.about-us-container p {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
