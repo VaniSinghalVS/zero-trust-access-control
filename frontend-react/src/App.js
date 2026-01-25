@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import AboutUs from "./pages/AboutUs";
+import AboutTechnology from "./pages/AboutTechnology";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -148,6 +151,19 @@ function App() {
         </div>
       )}
     </div>
+    <Router>
+      <nav style={{ padding: "1rem", background: "#ddd" }}>
+        <Link to="/" style={{ marginRight: "1rem" }}>Home</Link>
+        <Link to="/about-us" style={{ marginRight: "1rem" }}>About Us</Link>
+        <Link to="/about-tech">About Technology</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/about-tech" element={<AboutTechnology />} />
+      </Routes>
+    </Router>
   );
 }
 
