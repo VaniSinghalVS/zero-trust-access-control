@@ -1,13 +1,17 @@
 import React from "react";
+import "./AboutTechnology.css";
 
 const AboutTechnology = () => {
   return (
-    <div style={{ padding: "2rem" }}>
+    <div className="about-tech-container">
       <h1>About Technology</h1>
       <p>
-        This system uses React for the frontend UI and Java for backend logic.
-        It demonstrates Zero Trust access control concepts such as context-aware
-        trust evaluations, role-based decisions, and trust score visualization.
+        The frontend of this project is built using React, providing a
+        component-based and responsive user interface.
+      </p>
+      <p>
+        The backend is implemented in Java and focuses on Zero Trust principles
+        such as continuous verification, role-based access, and trust evaluation.
       </p>
     </div>
   );
