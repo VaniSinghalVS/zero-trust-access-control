@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import AboutUs from "./pages/AboutUs";
-import AboutTechnology from "./pages/AboutTechnology";
+import AboutUs from "./AboutUs";
+import AboutTechnology from "./AboutTechnology";
+
 
 function App() {
   const [username, setUsername] = useState("");
@@ -27,7 +28,7 @@ function App() {
         "✔ MFA enabled",
         "✔ Geo-location matched"
       ]);
-    } 
+    }
     else if (username === "user1" && password === "user123") {
       currentRole = "User";
       trustScore = 75;
@@ -39,7 +40,7 @@ function App() {
         "✖ MFA not enabled",
         "✔ Geo-location matched"
       ]);
-    } 
+    }
     else if (username === "user2" && password === "user456") {
       currentRole = "User";
       trustScore = 55;
@@ -51,7 +52,7 @@ function App() {
         "✖ MFA not enabled",
         "✔ Geo-location matched"
       ]);
-    } 
+    }
     else {
       setResult("Invalid credentials → ACCESS DENIED");
       setRole("");
@@ -63,18 +64,20 @@ function App() {
     setRole(currentRole);
 
     // Decision logic
+    // Decision logic
+    // Decision logic
     if (currentRole === "Admin" && trustScore >= 60) {
       setLoggedIn(true);
       setResult(`ACCESS GRANTED (Trust Score: ${trustScore})`);
-    } 
+    }
     else if (currentRole === "User" && trustScore >= 70) {
       setLoggedIn(true);
       setResult(`ACCESS GRANTED (Trust Score: ${trustScore})`);
-    } 
+    }
     else if (trustScore >= 40) {
       setLoggedIn(false);
       setResult(`EXTRA VERIFICATION REQUIRED (Trust Score: ${trustScore})`);
-    } 
+    }
     else {
       setLoggedIn(false);
       setResult("ACCESS DENIED");
@@ -97,7 +100,17 @@ function App() {
     setTrustDetails([]);
   };
 
+  const Home = () => (
+  <div style={{ textAlign: "center", marginTop: "40px" }}>
+    <h2>Welcome to Zero Trust Access Control System</h2>
+    <p>
+      This prototype demonstrates adaptive access control based on Zero Trust principles.
+    </p>
+  </div>
+  );
+
   return (
+  <>
     <div style={{ textAlign: "center", marginTop: "60px", fontFamily: "Arial" }}>
       <h2>Zero Trust Access Control System</h2>
 
@@ -151,20 +164,27 @@ function App() {
         </div>
       )}
     </div>
-    <Router>
-      <nav style={{ padding: "1rem", background: "#ddd" }}>
-        <Link to="/" style={{ marginRight: "1rem" }}>Home</Link>
-        <Link to="/about-us" style={{ marginRight: "1rem" }}>About Us</Link>
-        <Link to="/about-tech">About Technology</Link>
-      </nav>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/about-tech" element={<AboutTechnology />} />
-      </Routes>
+    <Router>
+      {loggedIn && (
+        <>
+          <nav style={{ padding: "1rem", background: "#ddd" }}>
+            <Link to="/" style={{ marginRight: "1rem" }}>Home</Link>
+            <Link to="/about-us" style={{ marginRight: "1rem" }}>About Us</Link>
+            <Link to="/about-tech">About Technology</Link>
+          </nav>
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/about-tech" element={<AboutTechnology />} />
+          </Routes>
+        </>
+      )}
     </Router>
-  );
+
+  </>
+);
 }
 
 export default App;
