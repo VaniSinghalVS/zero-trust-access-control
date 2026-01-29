@@ -74,6 +74,7 @@ zero-trust-access-control/
 ---
 
 ### Backend (Java)
+```md
 ```bash
 cd backend/src
 javac ZeroTrustServer.java
