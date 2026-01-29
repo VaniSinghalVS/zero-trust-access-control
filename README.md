@@ -43,8 +43,6 @@ This project implements a **prototype Zero Trust Access Control System** that ev
 
 ## 🧩 Project Structure
 
-## 🧩 Project Structure
-
 ```text
 zero-trust-access-control/
 ├── backend/
