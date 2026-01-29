@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Zero Trust Access Control System (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Project Overview
+This project is a frontend prototype of a **Zero Trust Access Control System** built using **React**.  
+It demonstrates how access decisions can be made dynamically based on **user identity, role, and trust score**, instead of assuming implicit trust.
 
-## Available Scripts
+The application simulates adaptive authentication by evaluating multiple trust factors before granting access to protected resources.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🔐 Key Features
+- Role-based access control (Admin / User)
+- Dynamic trust score calculation
+- Adaptive access decisions:
+  - Access Granted
+  - Extra Verification Required
+  - Access Denied
+- Protected routes and navigation
+- Conditional rendering based on authentication state
+- Zero Trust UI enforcement (no access before login)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧠 Zero Trust Logic
+Each login attempt is evaluated using simulated trust factors such as:
+- Credential validity
+- Device familiarity
+- Login time behavior
+- IP address consistency
+- MFA availability
+- Geo-location match
 
-### `npm test`
+Based on the trust score:
+- **Admin** requires ≥ 60 trust score
+- **User** requires ≥ 70 trust score
+- Medium trust triggers additional verification
+- Low trust results in access denial
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🧭 Application Flow
+1. User enters credentials
+2. System evaluates trust factors
+3. Trust score is calculated
+4. Access decision is made
+5. Protected pages become visible only after successful login
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛡️ Security Implementation
+- All internal pages (Home, About Us, About Technology) are hidden until authentication is successful
+- Navigation menu is conditionally rendered based on login status
+- This aligns with **Zero Trust principles**: *never trust, always verify*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠️ Technologies Used
+- React.js
+- React Hooks (`useState`)
+- React Router DOM
+- JavaScript (ES6)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🚀 How to Run the Project
+```bash
+npm install
+npm start
