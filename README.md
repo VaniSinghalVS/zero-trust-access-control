@@ -30,9 +30,10 @@ This project implements a **prototype Zero Trust Access Control System** that ev
 - HTML, CSS
 - Node.js & npm
 
-### Backend
+## Backend
 - Java (JDK 17)
-- Trust evaluation logic implemented in Java
+- Backend component is a conceptual prototype to demonstrate Zero Trust principles
+- Current implementation focuses on frontend-based trust evaluation and access control
 
 ### Tools
 - Git
